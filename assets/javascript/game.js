@@ -29,7 +29,7 @@ var audio = new Audio();
 
 //Create a function to display the letters to be guessed
 
-function newGaem () {
+function newGame () {
     wordInt = Math.floor((Math.random() * words.length)); 
     currentWord = words[wordInt];
     console.log(currentWord);
@@ -39,7 +39,7 @@ function newGaem () {
     }
 
     //Create spaces for letters 
-    for (var i = 0; i < currentWord.length; i++){
+    for (var i = 0; i < currentWord.length; i++) {
         if (currentWord[i] === " ") {
             unknownWord[i] = " ";
         } else {
@@ -139,7 +139,7 @@ function win () {
     }
 
     if (winnerWon == true) { 
-        $('#messages').html(messages.win); 
+        $('#messages').innerhtml(messages.win); 
 
         //plays music to go along with each corresponding word 
         for (var i = 0; i < playlist.length; i++) { 
@@ -150,7 +150,7 @@ function win () {
         }
 
         winCounter++; 
-        $('winCounter').html(winCounter); 
+        $('winCounter').innerhtml(winCounter); 
         lettersGuessed = []; 
         $('#lettersGuessed').html(lettersGuessed); 
         lives = 10; 
